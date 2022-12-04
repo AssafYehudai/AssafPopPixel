@@ -56,15 +56,63 @@
 		238ADF25293C86F700C3AD60 /* AssafPopPixel */ = {
 			isa = PBXGroup;
 			children = (
-				238ADF26293C86F700C3AD60 /* AppDelegate.swift */,
-				238ADF28293C86F700C3AD60 /* SceneDelegate.swift */,
-				238ADF2A293C86F700C3AD60 /* ViewController.swift */,
-				238ADF2C293C86F700C3AD60 /* Main.storyboard */,
-				238ADF2F293C86F900C3AD60 /* Assets.xcassets */,
-				238ADF31293C86F900C3AD60 /* LaunchScreen.storyboard */,
-				238ADF34293C86F900C3AD60 /* Info.plist */,
+				238ADF3B293C91D500C3AD60 /* SupportFiles */,
+				238ADF3A293C91CA00C3AD60 /* App */,
+				238ADF3D293C922300C3AD60 /* Commone */,
+				238ADF3C293C921400C3AD60 /* Screens */,
 			);
 			path = AssafPopPixel;
+			sourceTree = "<group>";
+		};
+		238ADF3A293C91CA00C3AD60 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				238ADF26293C86F700C3AD60 /* AppDelegate.swift */,
+				238ADF28293C86F700C3AD60 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		238ADF3B293C91D500C3AD60 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				238ADF34293C86F900C3AD60 /* Info.plist */,
+				238ADF2F293C86F900C3AD60 /* Assets.xcassets */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		238ADF3C293C921400C3AD60 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				238ADF3F293C924C00C3AD60 /* Main */,
+				238ADF3E293C923D00C3AD60 /* Launch */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		238ADF3D293C922300C3AD60 /* Commone */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Commone;
+			sourceTree = "<group>";
+		};
+		238ADF3E293C923D00C3AD60 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				238ADF31293C86F900C3AD60 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		238ADF3F293C924C00C3AD60 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				238ADF2A293C86F700C3AD60 /* ViewController.swift */,
+				238ADF2C293C86F700C3AD60 /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +264,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,12 +337,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TFQ6ZK54X6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AssafPopPixel/Info.plist;
+				INFOPLIST_FILE = AssafPopPixel/SupportFiles/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,12 +367,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TFQ6ZK54X6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AssafPopPixel/Info.plist;
+				INFOPLIST_FILE = AssafPopPixel/SupportFiles/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
