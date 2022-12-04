@@ -51,11 +51,14 @@ class ViewController: UIViewController {
                                                            target: self,
                                                            action: #selector(save))
         saveButtonEnabled = false
-        checkAuthorization()
         setPickerDelegate()
         setupAssetsMerger()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkAuthorization()
+    }
     // MARK: - Selectors
     @objc private func openVideoPicker() {
         let picker = PHPickerViewController(configuration: configuration)
@@ -95,8 +98,11 @@ class ViewController: UIViewController {
     
     private func checkAuthorization() {
         guard PHPhotoLibrary.authorizationStatus() == .authorized  else {
-            PHPhotoLibrary.requestAuthorization(for: .readWrite) {[weak self] status in
-                self?.addButtonEnabled = (status == .authorized)
+            PHPhotoLibrary.requestAuthorization(for: .readWrite) {[unowned self] status in
+                self.addButtonEnabled = (status == .authorized)
+                if status != .authorized {
+                    Alerts.showAuthorizationAlert(vc: self)
+                }
             }
             return
         }
@@ -104,11 +110,12 @@ class ViewController: UIViewController {
     }
     
     private func onVideoSaved() {
-        
-        
-        saveButtonEnabled = false
-        playerView.setup(item: nil)
-        
+        Alerts.showSaveAlert(vc: self) {[weak self] in
+            DispatchQueue.main.async {
+                self?.saveButtonEnabled = false
+                self?.playerView.setup(item: nil)
+            }
+        }
     }
 }
 
