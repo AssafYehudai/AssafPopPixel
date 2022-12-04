@@ -10,8 +10,12 @@ import PhotosUI
 
 class ViewController: UIViewController {
     
+    // MARK: - IBOutlet
+    @IBOutlet weak var playerView: AvPlayerView!
+    
     // MARK: - Properties
     private var pickerDelegate: AssetsPickerDelegate?
+    private var assetsMerger: AssetsMerger?
     private lazy var configuration: PHPickerConfiguration =  {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
         configuration.filter = .videos
@@ -34,22 +38,44 @@ class ViewController: UIViewController {
         title = "Photo Editor"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
-                                                            action: #selector(addVideos))
+                                                            action: #selector(openVideoPicker))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
+                                                           target: self,
+                                                           action: #selector(save))
         checkAuthorization()
+        setPickerDelegate()
+        setupAssetsMerger()
+    }
+    
+    // MARK: - Selectors
+    @objc private func openVideoPicker() {
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = pickerDelegate
+        present(picker, animated: true)
+    }
+    
+    @objc private func save() {
+        assetsMerger?.saveComposition()
     }
     
     // MARK: - Private Helpers
-    @objc private func addVideos() {
+    private func setPickerDelegate() {
         pickerDelegate = AssetsPickerDelegate(
             onDissmis: { [weak self] in
                 self?.dismiss(animated: true)
             },
             onResult: { [weak self] results in
-                print(results.count)
+                self?.assetsMerger?.mergeVideoAssests(assets: results.compactMap { $0.asset })
             })
-        let picker = PHPickerViewController(configuration: configuration)
-        picker.delegate = pickerDelegate
-        present(picker, animated: true)
+    }
+    
+    private func setupAssetsMerger() {
+        assetsMerger = AssetsMerger(
+            onPreviewReady: {[weak self] previewItem in
+            DispatchQueue.main.async {
+                self?.playerView.setPriview(item: previewItem)
+            }
+        })
     }
     
     private func checkAuthorization() {

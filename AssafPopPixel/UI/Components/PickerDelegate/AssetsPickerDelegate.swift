@@ -34,7 +34,9 @@ class AssetsPickerDelegate: PHPickerViewControllerDelegate {
     private func handle(results: [PHAsset]) {
         converter = AvAssestConverter()
         converter?.convert(from: results) {[weak self] assets in
-            self?.onResult?(assets)
+            DispatchQueue.main.async {
+                self?.onResult?(assets)
+            }
         }
     }
 }
