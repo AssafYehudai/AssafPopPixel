@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         super.viewDidLoad()
-        title = "Photo Editor"
+        title = "Video Editor"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
                                                             action: #selector(openVideoPicker))
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
         assetsMerger = AssetsMerger(
             onPreviewReady: {[weak self] previewItem in
             DispatchQueue.main.async {
-                self?.playerView.setPriview(item: previewItem)
+                self?.playerView.setup(item: previewItem)
             }
         })
     }

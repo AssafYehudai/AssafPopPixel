@@ -18,17 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIz-Ws-xyd" customClass="AvPlayerView" customModule="AssafPopPixel" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="103" width="393" height="400"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="eQk-4q-spR"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="dIz-Ws-xyd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Dhx-o2-X3P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dIz-Ws-xyd" secondAttribute="bottom" id="EJf-Dy-ugR"/>
                             <constraint firstItem="dIz-Ws-xyd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SGj-j4-g1a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dIz-Ws-xyd" secondAttribute="trailing" id="ttp-Ge-zSV"/>
                         </constraints>

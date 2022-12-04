@@ -17,6 +17,11 @@
 		238ADF44293C949B00C3AD60 /* AssetsPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238ADF43293C949B00C3AD60 /* AssetsPickerDelegate.swift */; };
 		238ADF46293CA96E00C3AD60 /* AssetsMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238ADF45293CA96E00C3AD60 /* AssetsMerger.swift */; };
 		238ADF4C293CBBB700C3AD60 /* AvPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238ADF4B293CBBB700C3AD60 /* AvPlayerView.swift */; };
+		238ADF4E293CD79D00C3AD60 /* AvPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238ADF4D293CD79D00C3AD60 /* AvPlayerView.xib */; };
+		23ACC200293CDB9900580264 /* Nibable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACC1FF293CDB9900580264 /* Nibable.swift */; };
+		23ACC202293CEFD600580264 /* UIImage + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACC201293CEFD600580264 /* UIImage + Ex.swift */; };
+		23ACC204293CF68C00580264 /* AvPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACC203293CF68C00580264 /* AvPlayerViewModel.swift */; };
+		23ACC206293CF99000580264 /* UIPlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACC205293CF99000580264 /* UIPlayerButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		238ADF43293C949B00C3AD60 /* AssetsPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsPickerDelegate.swift; sourceTree = "<group>"; };
 		238ADF45293CA96E00C3AD60 /* AssetsMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsMerger.swift; sourceTree = "<group>"; };
 		238ADF4B293CBBB700C3AD60 /* AvPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvPlayerView.swift; sourceTree = "<group>"; };
+		238ADF4D293CD79D00C3AD60 /* AvPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvPlayerView.xib; sourceTree = "<group>"; };
+		23ACC1FF293CDB9900580264 /* Nibable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nibable.swift; sourceTree = "<group>"; };
+		23ACC201293CEFD600580264 /* UIImage + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Ex.swift"; sourceTree = "<group>"; };
+		23ACC203293CF68C00580264 /* AvPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvPlayerViewModel.swift; sourceTree = "<group>"; };
+		23ACC205293CF99000580264 /* UIPlayerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPlayerButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +147,9 @@
 		238ADF47293CBACF00C3AD60 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				23ACC1FE293CDB7100580264 /* Protocols */,
 				238ADF40293C93D200C3AD60 /* AvFoundationHelpers */,
+				23ACC201293CEFD600580264 /* UIImage + Ex.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -147,6 +159,7 @@
 			children = (
 				238ADF4A293CBB8900C3AD60 /* AvPlayreView */,
 				238ADF49293CBB6E00C3AD60 /* PickerDelegate */,
+				23ACC205293CF99000580264 /* UIPlayerButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -163,8 +176,18 @@
 			isa = PBXGroup;
 			children = (
 				238ADF4B293CBBB700C3AD60 /* AvPlayerView.swift */,
+				238ADF4D293CD79D00C3AD60 /* AvPlayerView.xib */,
+				23ACC203293CF68C00580264 /* AvPlayerViewModel.swift */,
 			);
 			path = AvPlayreView;
+			sourceTree = "<group>";
+		};
+		23ACC1FE293CDB7100580264 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				23ACC1FF293CDB9900580264 /* Nibable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238ADF4E293CD79D00C3AD60 /* AvPlayerView.xib in Resources */,
 				238ADF33293C86F900C3AD60 /* LaunchScreen.storyboard in Resources */,
 				238ADF30293C86F900C3AD60 /* Assets.xcassets in Resources */,
 				238ADF2E293C86F700C3AD60 /* Main.storyboard in Resources */,
@@ -238,11 +262,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23ACC206293CF99000580264 /* UIPlayerButton.swift in Sources */,
 				238ADF42293C941100C3AD60 /* AvAssetConverter.swift in Sources */,
 				238ADF2B293C86F700C3AD60 /* ViewController.swift in Sources */,
+				23ACC204293CF68C00580264 /* AvPlayerViewModel.swift in Sources */,
+				23ACC202293CEFD600580264 /* UIImage + Ex.swift in Sources */,
 				238ADF44293C949B00C3AD60 /* AssetsPickerDelegate.swift in Sources */,
 				238ADF27293C86F700C3AD60 /* AppDelegate.swift in Sources */,
 				238ADF46293CA96E00C3AD60 /* AssetsMerger.swift in Sources */,
+				23ACC200293CDB9900580264 /* Nibable.swift in Sources */,
 				238ADF4C293CBBB700C3AD60 /* AvPlayerView.swift in Sources */,
 				238ADF29293C86F700C3AD60 /* SceneDelegate.swift in Sources */,
 			);
@@ -398,8 +426,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,8 +455,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

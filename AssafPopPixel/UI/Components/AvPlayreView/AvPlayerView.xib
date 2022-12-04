@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AVPlayerView">
+            <connections>
+                <outlet property="playButton" destination="fmh-kl-EWU" id="0le-p6-zcw"/>
+                <outlet property="playerContainer" destination="M9j-1L-UHh" id="v1P-47-Ekw"/>
+                <outlet property="progressBar" destination="Kxc-bv-Bpq" id="9bB-Xn-ENR"/>
+                <outlet property="view" destination="iN0-l3-epB" id="TmJ-wb-Zs5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="382"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="760-yw-lTl">
+                    <rect key="frame" x="0.0" y="326" width="393" height="56"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kxc-bv-Bpq">
+                            <rect key="frame" x="54" y="13" width="325" height="31"/>
+                            <connections>
+                                <action selector="onUserSlide:" destination="-1" eventType="valueChanged" id="6t2-q1-2pf"/>
+                            </connections>
+                        </slider>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmh-kl-EWU" customClass="UIPlayerButton" customModule="AssafPopPixel" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="56" id="Yy7-dd-hk7"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="play" catalog="system"/>
+                            <connections>
+                                <action selector="playButtonTapped:" destination="-1" eventType="touchUpInside" id="ijJ-qi-iuq"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    <constraints>
+                        <constraint firstItem="Kxc-bv-Bpq" firstAttribute="leading" secondItem="fmh-kl-EWU" secondAttribute="trailing" id="3Sd-By-7rE"/>
+                        <constraint firstItem="fmh-kl-EWU" firstAttribute="top" secondItem="760-yw-lTl" secondAttribute="top" id="GTF-7S-yo0"/>
+                        <constraint firstAttribute="bottom" secondItem="fmh-kl-EWU" secondAttribute="bottom" id="Pgq-4W-EJO"/>
+                        <constraint firstItem="Kxc-bv-Bpq" firstAttribute="centerY" secondItem="760-yw-lTl" secondAttribute="centerY" id="fg6-bV-zpL"/>
+                        <constraint firstItem="fmh-kl-EWU" firstAttribute="leading" secondItem="760-yw-lTl" secondAttribute="leading" id="nBM-qk-VMk"/>
+                        <constraint firstAttribute="trailing" secondItem="Kxc-bv-Bpq" secondAttribute="trailing" constant="16" id="svp-GC-3MF"/>
+                        <constraint firstAttribute="height" constant="56" id="v5x-BI-pwE"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9j-1L-UHh">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="326"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="M9j-1L-UHh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="NZp-Pt-73K"/>
+                <constraint firstItem="760-yw-lTl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Q3t-Sq-xhw"/>
+                <constraint firstItem="760-yw-lTl" firstAttribute="top" secondItem="M9j-1L-UHh" secondAttribute="bottom" id="WNq-bx-DrK"/>
+                <constraint firstItem="M9j-1L-UHh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZWR-Lc-8rJ"/>
+                <constraint firstItem="760-yw-lTl" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="gWx-dD-3SZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="760-yw-lTl" secondAttribute="trailing" id="pLO-cc-Og7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M9j-1L-UHh" secondAttribute="trailing" id="wG0-ov-Y2r"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="171.75572519083968" y="128.16901408450704"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="play" catalog="system" width="117" height="128"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
