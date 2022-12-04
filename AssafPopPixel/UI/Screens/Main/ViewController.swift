@@ -31,6 +31,14 @@ class ViewController: UIViewController {
         }
     }
     
+    private var saveButtonEnabled: Bool = false {
+        didSet {
+            DispatchQueue.main.async {[weak self] in
+                self?.navigationItem.leftBarButtonItem?.isEnabled = self?.saveButtonEnabled ?? false
+            }
+        }
+    }
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +50,7 @@ class ViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                            target: self,
                                                            action: #selector(save))
+        saveButtonEnabled = false
         checkAuthorization()
         setPickerDelegate()
         setupAssetsMerger()
@@ -65,6 +74,7 @@ class ViewController: UIViewController {
                 self?.dismiss(animated: true)
             },
             onResult: { [weak self] results in
+                self?.saveButtonEnabled = true
                 self?.assetsMerger?.mergeVideoAssests(assets: results.compactMap { $0.asset })
             })
     }
@@ -72,10 +82,15 @@ class ViewController: UIViewController {
     private func setupAssetsMerger() {
         assetsMerger = AssetsMerger(
             onPreviewReady: {[weak self] previewItem in
-            DispatchQueue.main.async {
-                self?.playerView.setup(item: previewItem)
-            }
-        })
+                DispatchQueue.main.async {
+                    self?.playerView.setup(item: previewItem)
+                }
+            },
+            onFinishSave: {[weak self] in
+                DispatchQueue.main.async {
+                    self?.onVideoSaved()
+                }
+            })
     }
     
     private func checkAuthorization() {
@@ -86,6 +101,14 @@ class ViewController: UIViewController {
             return
         }
         self.addButtonEnabled = true
+    }
+    
+    private func onVideoSaved() {
+        
+        
+        saveButtonEnabled = false
+        playerView.setup(item: nil)
+        
     }
 }
 

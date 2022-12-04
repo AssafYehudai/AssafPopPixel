@@ -82,8 +82,6 @@ class AvPlayerView: UIView, Nibable {
         player = AVPlayer()
         playerLayer = AVPlayerLayer(player: player)
         playerLayer.needsDisplayOnBoundsChange = true
-        let affineTransform = CGAffineTransform(rotationAngle: .pi * 0.5)
-        playerLayer.setAffineTransform(affineTransform)
         playerContainer.layer.addSublayer(playerLayer)
         
         let interval = CMTime(value: CMTimeValue(1), timescale: CMTimeScale(1))

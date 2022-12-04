@@ -22,6 +22,7 @@
 		23ACC202293CEFD600580264 /* UIImage + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACC201293CEFD600580264 /* UIImage + Ex.swift */; };
 		23ACC204293CF68C00580264 /* AvPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACC203293CF68C00580264 /* AvPlayerViewModel.swift */; };
 		23ACC206293CF99000580264 /* UIPlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACC205293CF99000580264 /* UIPlayerButton.swift */; };
+		23ACC20A293D101900580264 /* Alerst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACC209293D101900580264 /* Alerst.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		23ACC201293CEFD600580264 /* UIImage + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Ex.swift"; sourceTree = "<group>"; };
 		23ACC203293CF68C00580264 /* AvPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvPlayerViewModel.swift; sourceTree = "<group>"; };
 		23ACC205293CF99000580264 /* UIPlayerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPlayerButton.swift; sourceTree = "<group>"; };
+		23ACC209293D101900580264 /* Alerst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerst.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		238ADF3D293C922300C3AD60 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				23ACC208293D0FFD00580264 /* Alerts */,
 				238ADF48293CBB2B00C3AD60 /* Components */,
 				238ADF3C293C921400C3AD60 /* Screens */,
 			);
@@ -135,21 +138,22 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		238ADF40293C93D200C3AD60 /* AvFoundationHelpers */ = {
+		238ADF40293C93D200C3AD60 /* AvFoundationBusiness */ = {
 			isa = PBXGroup;
 			children = (
+				238ADF43293C949B00C3AD60 /* AssetsPickerDelegate.swift */,
 				238ADF41293C941100C3AD60 /* AvAssetConverter.swift */,
 				238ADF45293CA96E00C3AD60 /* AssetsMerger.swift */,
 			);
-			path = AvFoundationHelpers;
+			path = AvFoundationBusiness;
 			sourceTree = "<group>";
 		};
 		238ADF47293CBACF00C3AD60 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				23ACC207293D0FC000580264 /* Extensions */,
 				23ACC1FE293CDB7100580264 /* Protocols */,
-				238ADF40293C93D200C3AD60 /* AvFoundationHelpers */,
-				23ACC201293CEFD600580264 /* UIImage + Ex.swift */,
+				238ADF40293C93D200C3AD60 /* AvFoundationBusiness */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -158,18 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				238ADF4A293CBB8900C3AD60 /* AvPlayreView */,
-				238ADF49293CBB6E00C3AD60 /* PickerDelegate */,
 				23ACC205293CF99000580264 /* UIPlayerButton.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		238ADF49293CBB6E00C3AD60 /* PickerDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				238ADF43293C949B00C3AD60 /* AssetsPickerDelegate.swift */,
-			);
-			path = PickerDelegate;
 			sourceTree = "<group>";
 		};
 		238ADF4A293CBB8900C3AD60 /* AvPlayreView */ = {
@@ -188,6 +183,22 @@
 				23ACC1FF293CDB9900580264 /* Nibable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		23ACC207293D0FC000580264 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				23ACC201293CEFD600580264 /* UIImage + Ex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		23ACC208293D0FFD00580264 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				23ACC209293D101900580264 /* Alerst.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 			files = (
 				23ACC206293CF99000580264 /* UIPlayerButton.swift in Sources */,
 				238ADF42293C941100C3AD60 /* AvAssetConverter.swift in Sources */,
+				23ACC20A293D101900580264 /* Alerst.swift in Sources */,
 				238ADF2B293C86F700C3AD60 /* ViewController.swift in Sources */,
 				23ACC204293CF68C00580264 /* AvPlayerViewModel.swift in Sources */,
 				23ACC202293CEFD600580264 /* UIImage + Ex.swift in Sources */,
